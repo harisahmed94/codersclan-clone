@@ -1,0 +1,771 @@
+/*
+Theme Name: Coders Clan
+Theme URI: http://underscores.me/
+Author: Haris Ahmed
+Author URI: http://underscores.me/
+Description: A custom WordPress theme for demo purpose.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: codersclan
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Coders Clan is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+# Theme Specific Styles
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+		display: block;
+	}
+}
+
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
+	margin: 0 0 1.5em;
+	overflow: hidden;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float: left;
+	width: 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+	clear: both;
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.widget {
+	margin: 0 0 1.5em;
+}
+
+/* Make sure select elements fit in widgets. */
+.widget select {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+}
+
+.byline,
+.updated:not(.published) {
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+.gallery {
+	margin-bottom: 1.5em;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+
+.gallery-caption {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Theme Specific Styles
+--------------------------------------------------------------*/
+
+/* GENERAL */
+
+html, body {
+	background-color: #fff;
+	font-family: 'Roboto', 'Arial', sans-serif;
+	font-size: 16px;
+	color: #424C58;
+}
+
+section {
+	padding-top: 5rem;
+	padding-bottom: 4.688rem;
+}
+
+.btn-success {
+	color: #fff;
+  	border-radius: 30px; 
+  	background-color: #80b23f; 
+	border-color: #80b23f;
+	border-bottom: solid 5px #6d9735;
+}
+
+.btn-success:link, .btn-success:visited{
+	background-color: #80b23f; 
+	border-color: #80b23f;
+	border-bottom: solid 5px #6d9735;
+}
+
+.btn-success:hover, .btn-success:active:focus {
+	
+	background-color: #7aaa3c; 
+	border-color: #7aaa3c;
+	border-bottom: solid 5px #6d9735; 
+	box-shadow: none;
+}
+
+.btn-lg {
+	padding: 1.063rem 3.438rem;
+	font-size: 1rem;
+	text-transform: uppercase;
+	font-weight: 700;
+	box-sizing: border-box;
+}
+
+
+.clearfix { zoom : 1 }
+.clearfix:after {
+	content: " ";
+	clear: both;
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+
+/* TYPOGRAPHY */
+
+h1, h2, h3, h4, h5, h6{
+	margin: 0;
+}
+
+.center-text {
+	text-align: center;
+}
+
+p{
+	font-weight: 300;
+	font-size: 1rem;
+}
+
+h1, .header-text{
+	font-size: 2.188rem;
+	line-height: 2.625rem;
+	font-weight: 500;
+	margin-bottom: 0.4375rem;
+}
+
+h2{
+	font-weight: 300;
+	font-size: 1.563rem;
+	line-height: 1.5rem;
+}
+
+.lead{
+	font-size: 1.25rem;
+	line-height: 1.5rem;
+	font-weight: 300;
+	margin-bottom: 2.188rem;
+}
+
+
+/* HEADER */
+
+.img-container {
+
+	background: url(/wp-content/themes/codersclan/assets/img/hero-backup.jpg) center center no-repeat;
+	  background : -moz-linear-gradient(31.49% -65.53% -60deg,rgba(28, 183, 141, 1) 0%,rgba(37, 108, 141, 1) 45.19%,rgba(43, 56, 141, 1) 75.35%,rgba(14, 57, 92, 1) 100%), url(/wp-content/themes/codersclan/assets/img/hero-bg.jpg) center center no-repeat;
+	  background : -webkit-linear-gradient(-60deg, rgba(28, 183, 141, 1) 0%, rgba(37, 108, 141, 1) 45.19%, rgba(43, 56, 141, 1) 75.35%, rgba(14, 57, 92, 1) 100%), url(/wp-content/themes/codersclan/assets/img/hero-bg.jpg) center center no-repeat;
+	  background : -webkit-gradient(linear,31.49% -65.53% ,68.51% 165.53% ,color-stop(0,rgba(28, 183, 141, 1) ),color-stop(0.4519,rgba(37, 108, 141, 1) ),color-stop(0.7535,rgba(43, 56, 141, 1) ),color-stop(1,rgba(14, 57, 92, 1) )), url(/wp-content/themes/codersclan/assets/img/hero-bg.jpg) center center no-repeat;
+	  background : -o-linear-gradient(-60deg, rgba(28, 183, 141, 1) 0%, rgba(37, 108, 141, 1) 45.19%, rgba(43, 56, 141, 1) 75.35%, rgba(14, 57, 92, 1) 100%), url(/wp-content/themes/codersclan/assets/img/hero-bg.jpg) center center no-repeat;
+	  background : -ms-linear-gradient(-60deg, rgba(28, 183, 141, 1) 0%, rgba(37, 108, 141, 1) 45.19%, rgba(43, 56, 141, 1) 75.35%, rgba(14, 57, 92, 1) 100%), url(/wp-content/themes/codersclan/assets/img/hero-bg.jpg) center center no-repeat;
+	  -ms-filter:  "progid:DXImageTransform.Microsoft.gradient(startColorstr='#1CB78D', endColorstr='#0E395C' ,GradientType=0)", url(/wp-content/themes/codersclan/assets/img/hero-bg.jpg) center center no-repeat;
+	  background : linear-gradient(150deg, rgba(28, 183, 141, 1) 0%, rgba(37, 108, 141, 1) 45.19%, rgba(43, 56, 141, 1) 75.35%, rgba(14, 57, 92, 1) 100%), url(/wp-content/themes/codersclan/assets/img/hero-bg.jpg) center center no-repeat;
+	  filter: 		progid:DXImageTransform.Microsoft.gradient(startColorstr='#1CB78D',endColorstr='#0E395C' , GradientType=1), url(/wp-content/themes/codersclan/assets/img/hero-bg.jpg) center center no-repeat;
+	
+	background-size: cover;
+	background-blend-mode: multiply;
+	min-height: 470px;
+}
+
+.navbar-brand {
+	padding: 2.188rem;
+}
+
+/* HERO */
+
+#hero {
+	padding-top: 8.75rem;
+	padding-bottom: 7.188rem;
+	color: #fff;
+}
+
+
+/* COMPANIES */
+
+.companies {
+	background: #dedede;
+	padding: 1.25rem 0;
+}
+
+/* ADVANTAGES */
+
+.advantages {
+	padding-top: 2.188rem;
+	padding-bottom: 2.813rem;
+	line-height: 1.5rem;
+}
+
+.advantages h2{
+	font-weight: 300; 
+	font-size: 1.563rem;
+	line-height: 1.813rem;
+	margin-bottom: 6px;
+}
+
+.advantages .vertical{
+	display: flex;
+	align-items: center;
+}
+
+.advantages img{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* SUPERHERO */
+
+.superhero {
+	background: #dedede;
+}
+
+.superhero h2{
+	margin-bottom: 1.25rem;
+}
+
+.superhero-text{
+	margin-top: -50px;
+}
+
+.superhero-paragraph{
+	max-width: 420px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* TESTIMONIALS */
+
+.testimonials {
+	padding-top: 5rem;
+	padding-bottom: 3.5rem;
+}
+
+.testimonials h2 {
+	margin-bottom: 2.188rem;
+}
+
+.testimonials .carousel-caption{
+	color: #4d4d4d;
+	text-align: left;
+	text-shadow: none;
+	position: relative;
+	left: 0;
+}
+
+.testimonials blockquote {
+	padding: 0;
+	margin: 0;
+	border: none;
+	font-size: 1rem;
+	font-weight: 300;
+	line-height: 1.5rem;
+	max-width: 540px;
+}
+
+.testimonials cite {
+	display: block;
+	margin-top: 1.875rem;
+	font-style: normal;
+	color: #2c2c2c;
+	font-size: 0.875rem;
+}
+
+.testimonials .testimonial-img {
+	width: 40px;
+	height: 40px;
+	margin-right: 10px;
+}
+
+.testimonials cite span{
+	font-weight: 700;
+}
+
+.testimonials .carousel-indicators {
+	position: relative;
+	/*margin-top: 1.5rem;*/
+}
+
+.testimonials .carousel-indicators li{
+	background-color: #888;
+	border: 1px solid #888;
+	margin: 5px;
+}
+
+.testimonials .carousel-indicators .active{
+	width: 10px;
+	height: 10px;
+	background-color: #4d4d4d;
+	border: 1px solid #4d4d4d;
+}
+
+/* CONTACT */
+
+.contact
+{
+	padding-top: 3.75rem;
+	padding-bottom: 4.375rem;
+	color: #fff;
+	background: url(/wp-content/themes/codersclan/assets/img/gradient-backup.jpg) center center no-repeat;
+	background : -moz-linear-gradient(0% 50% 0deg,rgba(9, 24, 63, 1) 0%,rgba(22, 81, 134, 1) 50%,rgba(28, 113, 184, 1) 100%);
+	background : -webkit-linear-gradient(0deg, rgba(9, 24, 63, 1) 0%, rgba(22, 81, 134, 1) 50%, rgba(28, 113, 184, 1) 100%);
+	background : -webkit-gradient(linear,0% 50% ,100% 50% ,color-stop(0,rgba(9, 24, 63, 1) ),color-stop(0.5,rgba(22, 81, 134, 1) ),color-stop(1,rgba(28, 113, 184, 1) ));
+	background : -o-linear-gradient(0deg, rgba(9, 24, 63, 1) 0%, rgba(22, 81, 134, 1) 50%, rgba(28, 113, 184, 1) 100%);
+	background : -ms-linear-gradient(0deg, rgba(9, 24, 63, 1) 0%, rgba(22, 81, 134, 1) 50%, rgba(28, 113, 184, 1) 100%);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#09183F', endColorstr='#1C71B8' ,GradientType=0)";
+	background : linear-gradient(90deg, rgba(9, 24, 63, 1) 0%, rgba(22, 81, 134, 1) 50%, rgba(28, 113, 184, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#09183F',endColorstr='#1C71B8' , GradientType=1);
+	background-size: cover;
+}
+
+.contact .form-group{
+	margin-bottom: 1.563rem;
+}
+
+.contact .form-group:last-of-type{
+	margin-bottom: 2.813rem;
+}
+
+.contact .form-control{
+	border: 2px solid #dedede;
+	border-radius: 13px;
+}
+
+.contact .input-lg {
+	padding: 20px;
+	height: 50px;
+}
+
+.contact *::-webkit-input-placeholder {
+    color: #dedede;
+}
+.contact *:-moz-placeholder {
+    /* FF 4-18 */
+    color: #dedede;
+}
+.contact *::-moz-placeholder {
+    /* FF 19+ */
+    color: #dedede;
+}
+.contact *:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #dedede;
+}
+
+.contact .btn-lg{
+	width: 100%;
+}
+
+/* FOOTER */
+
+footer{
+	padding: 2.063rem 0;
+	color: #000;
+}
+
+footer .icon-links{
+	margin-right: 30px;
+}
+
+footer .icon-container {
+	margin-bottom: 1.25rem;
+}
+
+footer .copyright-text{
+	float: left;
+	margin-right: 10px;
+}
+
+footer nav{
+	padding: 0;
+	float: left;
+}
+
+footer nav a{
+	color: #000;
+}
+
+footer nav a:hover, footer nav a:focus{
+	text-decoration: underline;
+	color: #000;
+}
+
+footer ul{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+footer ul li{
+	display: inline-block;
+}
+
+footer ul li{
+	margin-right: 10px;
+}
+
+footer .footer-content{
+	display: inline-block;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 991px){
+
+	html, body {
+		font-size: 15px;
+	}
+
+
+}
+
+@media screen and (max-width: 991px) and  (min-width: 768px) {
+  
+  .superhero .superhero-text{
+		margin-top: -20px;
+	}
+
+}
+
+@media screen and (max-width: 767px){
+
+	html, body {
+		font-size: 14px;
+	}
+
+	.testimonials .testimonial-logo{
+		margin-bottom: 1.5rem;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	.testimonials .carousel-caption {
+		display: inline-block;
+	}
+
+	.testimonials .carousel-inner {
+		text-align: center;
+	}
+
+}
+
+@media screen and (max-width: 640px){
+
+	.superhero .superhero-text{
+		margin-top: -20px;
+	}
+
+
+}
+
+@media screen and (max-width: 431px){
+
+	.superhero .superhero-text{
+		margin-top: 0px;
+	}
+
+}
+
