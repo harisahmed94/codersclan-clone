@@ -1,5 +1,4 @@
 <?php
-
 function cc_admin_init(){
 
 	include ('enqueue.php');
@@ -9,6 +8,4 @@ function cc_admin_init(){
 	add_action ( 'admin_post_cc_save_options', 'cc_save_options' );
 
 }
-
 ?>
-
